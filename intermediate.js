@@ -3,7 +3,13 @@
 //Using 2-dimensional arrays
 var students_array = [['Martin', 76],['Thomas',85],['Klaus',65],['Maria',93],['David',81]]
 
-//Using a dicitonary
+total = 0
+for (i=0; i<students_array.length;i++) {
+    total += students_array[i][1];
+}
+avg_points = total/students_array.length
+
+//Using a dictionary
 var students = {
     'Martin' : 76,
     'Thomas' : 85,
@@ -19,24 +25,20 @@ if (students[name]<60) {
 } else if (students[name]<70) {
     console.log(name +" got a D")
 } else if (students[name]<80) {
-    console.log(name + "got a C")
+    console.log(name + " got a C")
 } else if (students[name]<90) {
     console.log(name +" got a B")
 } else if (students[name]<100) {
-    console.log(name +" ot a A")
+    console.log(name +" got an A")
 } else {
     console.log("invalid")
 }
 
-total = 0
-for (i=0; i<students_array.length;i++) {
-    total += students_array[i][1];
-}
-avg_points = total/students_array.length
-
+//Here are all grades:
 total = 0
 for (let k in students) {
     total += students[k]
+    console.log(k + " has "+ students[k] + " points")
 }
 avg_points = total/students_array.length
 
