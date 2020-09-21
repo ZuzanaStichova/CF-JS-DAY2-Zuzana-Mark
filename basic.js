@@ -30,17 +30,22 @@ var temperature = Math.floor((Math.random()*31) -5);
 console.log(temperature);
 
 var img = document.createElement("img");
-img.src = "pic_1.jpg";
-var src = document.getElementById("image"); 
-
-
+var test = document.getElementById("image");
+test.style.width ="300px";
+img.style.width ="100%";
+img.style.height ="10em";
+img.style.objectFit ="cover";
 
 if (temperature < 0) {
     document.write(temperature + " is too cold.") 
-    src.appendChild(img)
+    img.src = "cold.jpeg";
+    test.appendChild(img)
 } else if (temperature < 20) {
-        document.write(temperature + " is fine")
-    } else {
-        document.write(temperature + " is too high")
-    }
-
+    document.write(temperature + " is fine");
+    img.src = "medium.jpeg";
+    test.appendChild(img)
+} else {
+    document.write(temperature + " is too high");
+    img.src = "hot.jpeg";
+    test.appendChild(img);
+}
